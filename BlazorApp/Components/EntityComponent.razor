@@ -1,0 +1,34 @@
+@typeparam TEntity
+@implements IDisposable
+@using BlazorApp.Entities
+@using BlazorApp.Services
+@using System.Drawing
+@using BlazorApp.Components
+
+@if (Entity != null)
+{
+    var entity = (ISimulationEntity)(object)Entity;
+
+    <div class="entity" style="position: absolute; top: @(entity.Location.Y)px; left: @(entity.Location.X)px; 
+                                background-color: @(entity is Human ? "blue" : "red");">
+        <!-- Visual representation of entity -->
+    </div>
+}
+else
+{
+    <div>Entity is not available.</div>
+}
+
+@code {
+    [Parameter]
+    public TEntity Entity { get; set; }
+
+    protected override void OnParametersSet() {
+        // Subscribe to update events if needed
+    }
+
+    public void Dispose()
+    {
+        // Cleanup if subscribed to events
+    }
+}

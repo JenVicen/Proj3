@@ -1,0 +1,41 @@
+@page "/map"
+@using BlazorApp.Components
+@inject BlazorApp.Services.SimulationManager SimulationManager
+
+<h3>Zombie Simulation Map</h3>
+
+<div class="map-container">
+    @foreach (var entity in SimulationManager.GetEntities())
+    {
+        <EntityComponent Entity="entity" />
+    }
+</div>
+
+<button @onclick="StartSimulation">Start</button>
+<button @onclick="StopSimulation">Stop</button>
+
+@code {
+    private bool isSimulationRunning = false;
+
+    private async Task StartSimulation()
+    {
+        isSimulationRunning = true;
+        await SimulationManager.StartSimulation();
+        _ = UpdateUI(); // Start the UI update loop
+    }
+
+    private void StopSimulation()
+    {
+        isSimulationRunning = false;
+        SimulationManager.StopSimulation();
+    }
+
+    private async Task UpdateUI()
+    {
+        while (isSimulationRunning)
+        {
+            StateHasChanged(); // Trigger UI update
+            await Task.Delay(16); // Adjust delay as needed for performance
+        }
+    }
+}

@@ -53,14 +53,14 @@ namespace BlazorApp.Services
 
         private Point[] GetTargetsForEntity(ISimulationEntity entity)
         {
-            // Example: Provide a variety of target points to encourage movement in all directions
+            // Variety of target points to encourage movement in all directions
             return new Point[] 
             { 
                 new Point(100, 100), 
                 new Point(200, 200), 
                 new Point(800, 500), 
                 new Point(500, 300) 
-            }; // Replace with actual logic
+            };
         }
     }
 }

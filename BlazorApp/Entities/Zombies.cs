@@ -8,7 +8,8 @@ namespace BlazorApp.Entities
     {
         public Point Location { get; set; }
         public int Lifespan { get; private set; }
-        private IDecisionAlgorithm DecisionAlgorithm;
+        public IDecisionAlgorithm DecisionAlgorithm;
+        
 
         public Zombie(IDecisionAlgorithm decisionAlgorithm)
         {

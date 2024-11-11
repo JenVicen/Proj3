@@ -15,27 +15,22 @@
 <button @onclick="StopSimulation">Stop</button>
 
 @code {
-    private bool isSimulationRunning = false;
-
-    private async Task StartSimulation()
+    protected override void OnInitialized()
     {
-        isSimulationRunning = true;
-        await SimulationManager.StartSimulation();
-        _ = UpdateUI(); // Start the UI update loop
+        SimulationManager.OnSimulationUpdated += RefreshUI;
     }
 
-    private void StopSimulation()
+    private async Task StartSimulation() => SimulationManager.StartSimulation();
+    private void StopSimulation() => SimulationManager.StopSimulation();
+
+    private void RefreshUI()
     {
-        isSimulationRunning = false;
-        SimulationManager.StopSimulation();
+        InvokeAsync(StateHasChanged);
     }
 
-    private async Task UpdateUI()
+    public void Dispose()
     {
-        while (isSimulationRunning)
-        {
-            StateHasChanged(); // Trigger UI update
-            await Task.Delay(16); // Adjust delay as needed for performance
-        }
+        SimulationManager.OnSimulationUpdated -= RefreshUI;
     }
 }
+

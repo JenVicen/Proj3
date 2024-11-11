@@ -7,6 +7,7 @@ namespace BlazorApp.Entities
     public class Human : ISimulationEntity
     {
         public Point Location { get; set; }
+        private static readonly Random random = new Random();
         public int Stamina { get; set; }
         private IDecisionAlgorithm DecisionAlgorithm;
 

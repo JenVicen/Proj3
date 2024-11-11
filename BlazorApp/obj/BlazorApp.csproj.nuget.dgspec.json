@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/jennifervicentesvalle/Desktop/TTU/Object-Oriented Programming/Project3-OOP/BlazorApp/BlazorApp.csproj": {}
+    "/Users/jennifervicentesvalle/Desktop/Project3-OOP/BlazorApp/BlazorApp.csproj": {}
   },
   "projects": {
-    "/Users/jennifervicentesvalle/Desktop/TTU/Object-Oriented Programming/Project3-OOP/BlazorApp/BlazorApp.csproj": {
+    "/Users/jennifervicentesvalle/Desktop/Project3-OOP/BlazorApp/BlazorApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/jennifervicentesvalle/Desktop/TTU/Object-Oriented Programming/Project3-OOP/BlazorApp/BlazorApp.csproj",
+        "projectUniqueName": "/Users/jennifervicentesvalle/Desktop/Project3-OOP/BlazorApp/BlazorApp.csproj",
         "projectName": "BlazorApp",
-        "projectPath": "/Users/jennifervicentesvalle/Desktop/TTU/Object-Oriented Programming/Project3-OOP/BlazorApp/BlazorApp.csproj",
+        "projectPath": "/Users/jennifervicentesvalle/Desktop/Project3-OOP/BlazorApp/BlazorApp.csproj",
         "packagesPath": "/Users/jennifervicentesvalle/.nuget/packages/",
-        "outputPath": "/Users/jennifervicentesvalle/Desktop/TTU/Object-Oriented Programming/Project3-OOP/BlazorApp/obj/",
+        "outputPath": "/Users/jennifervicentesvalle/Desktop/Project3-OOP/BlazorApp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/jennifervicentesvalle/.nuget/NuGet/NuGet.Config"
